@@ -174,21 +174,14 @@ export default {
         Vue.set(item,"checked",true);//添加checked属性到item上
         // this.$set(item,"checked",true);//局部注册
       }else{
-<<<<<<< HEAD
         item.checked = !item.checked;
       }
       //全部选中则全选点亮，相反
-=======
-        item.checked = !item.checked;      
-      }
-      //全部选中则全选，反之
       var checkAllFlags = true;
       this.productList.forEach(function(value,index){
           checkAllFlags = checkAllFlags && value.checked;//与为true则为true，若value.checked为false则checkAll为false
       });
-      this.checkAll = checkAllFlags;
-   
->>>>>>> 添加单选和全选的联动
+      this.checkAll = checkAllFlags; 
       //计算总金额
       this.calcTotalMoney();
     },
@@ -199,11 +192,7 @@ export default {
       this.productList.forEach(function (item,index) {//遍历商品列表
         if(typeof item.checked == 'undefined'){//如果不点击商品按钮直接点全选，就必须先给商品注册选中属性，其值为全选按钮的值
           _this.$set(item,"checked",_this.checkAll);
-<<<<<<< HEAD
         }else{//如果已经商品按钮（属性已经注册有）点击过，则直接赋值
-=======
-        }else{//如果当前商品按钮（属性已经注册有）点击过，则直接赋值
->>>>>>> 添加单选和全选的联动
           item.checked = _this.checkAll;
         }
       });
